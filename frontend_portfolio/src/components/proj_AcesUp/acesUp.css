@@ -1,0 +1,31 @@
+.simulation-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .simulation-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .simulation-button:hover {
+    background-color: var(--hover-background-color);
+  }
+  
+  .chart-container {
+    margin-top: 20px;
+  }
+  
+  .loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; /* Ensure it matches the chart height */
+  }
+  
