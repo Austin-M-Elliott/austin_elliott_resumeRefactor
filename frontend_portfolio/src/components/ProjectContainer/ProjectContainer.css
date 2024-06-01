@@ -1,17 +1,49 @@
+/* ProjectContainer.css */
+
 .project {
+  position: relative;
   padding: 2em;
   margin: 0 auto;
   text-align: center;
   box-shadow: var(--shadow);
   transition: transform 0.2s linear;
+  overflow: hidden; /* Ensure the pseudo-element is contained */
+  background-color: transparent; /* Ensure the background is transparent initially */
+}
+
+.project::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--clr-primary);
+  z-index: -1; /* Place it behind the content */
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in-out; /* Smooth transition for the background */
+}
+
+.project:hover::before {
+  transform: translateX(0); /* Fill background on hover */
 }
 
 .project:hover {
   transform: translateY(-7px);
 }
 
+.project:hover h3,
+.project:hover .project__description,
+.project:hover .project__stack-item,
+.project:hover .link--icon {
+  color: var(--clr-bg) !important; /* Change text color on hover for readability */
+}
+
 .project__description {
   margin-top: 1em;
+  z-index: 1; /* Ensure the text content is above the pseudo-element */
+  position: relative; /* Ensure the z-index works */
+  transition: color 0.4s ease-in-out; /* Smooth transition for text color */
 }
 
 .project__stack {
@@ -19,6 +51,9 @@
   flex-wrap: wrap;
   justify-content: center;
   margin: 1.2em 0;
+  z-index: 1; /* Ensure the stack content is above the pseudo-element */
+  position: relative; /* Ensure the z-index works */
+  transition: color 0.4s ease-in-out; /* Smooth transition for text color */
 }
 
 .project__stack-item {
@@ -26,8 +61,14 @@
   font-weight: 500;
   font-size: 0.8rem;
   color: var(--clr-fg-alt);
+  z-index: 1; /* Ensure the stack items are above the pseudo-element */
+  position: relative; /* Ensure the z-index works */
+  transition: color 0.4s ease-in-out; /* Smooth transition for text color */
 }
 
 .project .link--icon {
   margin-left: 0.5em;
+  z-index: 1; /* Ensure the icons are above the pseudo-element */
+  position: relative; /* Ensure the z-index works */
+  transition: color 0.4s ease-in-out; /* Smooth transition for icon color */
 }

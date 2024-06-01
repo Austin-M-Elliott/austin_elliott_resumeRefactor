@@ -1,0 +1,15 @@
+/* Subskills.css */
+
+.subskills-bubble {
+  display: none;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.subskill {
+  padding: 0.5em 1em;
+  background-color: var(--clr-primary-alt); /* Use alternate primary color */
+  border-radius: 5px;
+  white-space: nowrap;
+  color: var(--clr-bg);
+}

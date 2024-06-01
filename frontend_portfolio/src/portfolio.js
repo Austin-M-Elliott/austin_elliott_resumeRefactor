@@ -14,50 +14,31 @@ const about = {
   },
 }
 
-const projects = [
-  {
-    name: 'Project 1',
-    description:
-      'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
-    stack: ['SASS', 'TypeScript', 'React'],
-    sourceCode: 'https://github.com',
-    livePreview: 'https://github.com',
-  },
-  {
-    name: 'Project 2',
-    description:
-      'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
-    stack: ['SASS', 'TypeScript', 'React'],
-    sourceCode: 'https://github.com',
-    livePreview: 'https://github.com',
-  },
-  {
-    name: 'Project 3',
-    description:
-      'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
-    stack: ['SASS', 'TypeScript', 'React'],
-    sourceCode: 'https://github.com',
-    livePreview: 'https://github.com',
-  },
-]
+const projects = {}
+
+const softskills = [
+  { name: 'Communication' },
+  { name: 'Teamwork' },
+  { name: 'Problem-Solving' },
+  { name: 'Adaptability' },
+  { name: 'Critical Thinking' },
+  { name: 'Work Ethic' },
+  { name: 'Time Management' },
+  { name: 'Interpersonal Skills' },
+  { name: 'Leadership' },
+  { name: 'Attention to Detail' },
+];
 
 const skills = [
-  'Python',
-  'PowerBI',
-  'VBA',
-  'Excel',
-  'PowerApps',
-  'PowerAutomate',
-  'ArcGIS Pro',
-  'QGIS',
-  'Git',
-  'HTML',
-  'CSS',
-  'JavaScript',
-]
+  { name: 'Python', subSkills: ['matplotlib', 'plotly', 'scipy', 'pandas'] },
+  { name: 'PowerBI', subSkills: ['Power Query', 'DAX', 'Data Modeling'] },
+  { name: 'Test', subSkills: ['Test', 'Test', 'Test'] },
+  { name: 'Test2', subSkills: ['Test2', 'Test2', 'Test2'] },
+  { name: 'Test3', subSkills: ['Test3', 'Test3', 'Test3'] },
+];
 
 const contact = {
   email: 'austin.michael.elliott@gmail.com',
 }
 
-export { header, about, projects, skills, contact }
+export { header, about, projects, skills, softskills, contact }

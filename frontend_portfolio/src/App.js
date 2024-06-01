@@ -6,6 +6,7 @@ import HomeHeader from './components/HomeHeader/HomeHeader';
 import About from './components/About/About';
 import Projects from './components/Projects/Projects';
 import Skills from './components/Skills/Skills';
+import Softskills from './components/Softskills/Softskills';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
@@ -30,6 +31,7 @@ const App = () => {
                 <About />
                 <Projects />
                 <Skills />
+                <Softskills />
                 <Contact />
               </>
             }

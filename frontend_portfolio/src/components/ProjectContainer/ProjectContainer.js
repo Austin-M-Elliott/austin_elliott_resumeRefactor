@@ -1,13 +1,12 @@
-import uniqid from 'uniqid'
-import GitHubIcon from '@material-ui/icons/GitHub'
-import LaunchIcon from '@material-ui/icons/Launch'
-import { Link } from 'react-router-dom'
-import './ProjectContainer.css'
+import uniqid from 'uniqid';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LaunchIcon from '@material-ui/icons/Launch';
+import { Link } from 'react-router-dom';
+import './ProjectContainer.css';
 
 const ProjectContainer = ({ project }) => (
   <div className='project'>
     <h3>{project.name}</h3>
-
     <p className='project__description'>{project.description}</p>
     {project.stack && (
       <ul className='project__stack'>
@@ -18,7 +17,6 @@ const ProjectContainer = ({ project }) => (
         ))}
       </ul>
     )}
-
     {project.sourceCode && (
       <a
         href={project.sourceCode}
@@ -30,7 +28,6 @@ const ProjectContainer = ({ project }) => (
         <GitHubIcon />
       </a>
     )}
-
     {project.livePreview && (
       <a
         href={project.livePreview}
@@ -42,13 +39,12 @@ const ProjectContainer = ({ project }) => (
         <LaunchIcon />
       </a>
     )}
-
     {project.internalLink && (
       <Link to={project.internalLink} aria-label='internal link' className='link link--icon'>
         <LaunchIcon />
       </Link>
     )}
   </div>
-)
+);
 
-export default ProjectContainer
+export default ProjectContainer;
