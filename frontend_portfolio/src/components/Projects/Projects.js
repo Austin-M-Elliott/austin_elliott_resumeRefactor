@@ -7,7 +7,7 @@ const projects = [
     id: uniqid(),
     name: 'Aces Up',
     description: 'Card Game Simulation.',
-    internalLink: '/acesUp',
+    internalLink: '',
     stack: ['Python', 'React', 'FastAPI', 'Chart.js'],
     sourceCode: 'https://github.com/Austin-M-Elliott/timezone-frontend',
     livePreview: '',

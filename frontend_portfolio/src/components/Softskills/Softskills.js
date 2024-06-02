@@ -7,7 +7,7 @@ const Softskills = () => {
 
   return (
     <section className='section softskills' id='softskills'>
-      <h2 className='section__title'>SOFT SKILLS</h2>
+      <h2 className='section__title'>PERSONAL SKILLS</h2>
       <ul className='softskills__list'>
         {softskills.map((softskill) => (
           <li key={uniqid()} className='softskills__list-item'>

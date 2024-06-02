@@ -150,3 +150,11 @@ main {
     margin-top: 4em;
   }
 }
+
+.divider {
+  border: none;
+  height: 2px;
+  background-color: #ccc;
+  margin: 100px auto;
+  width: 80%;
+}

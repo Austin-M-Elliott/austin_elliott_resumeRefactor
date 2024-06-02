@@ -1,0 +1,51 @@
+.about-me {
+    max-width: 800px;
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .about-me__content {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+    box-shadow: var(--shadow);
+    margin-top: 1em;
+  }
+  
+  .about-me__image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: var(--shadow);
+  }
+  
+  .about-me__text {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .about-me__description {
+    margin-top: 1em;
+  }
+  
+  .about-me__hobbies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1.2em 0;
+    list-style: none;
+    padding: 5;
+  }
+  
+  .about-me__hobby-item {
+    margin: 0.5em;
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: var(--clr-fg-alt);
+    position: relative;
+    transition: color 0.4s ease-in-out;
+  }
+  

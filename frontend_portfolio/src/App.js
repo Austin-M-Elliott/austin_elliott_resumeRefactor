@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import { useContext } from 'react';
 import { ThemeContext } from './contexts/theme';
 import Header from './components/Header/Header';
@@ -7,6 +7,7 @@ import About from './components/About/About';
 import Projects from './components/Projects/Projects';
 import Skills from './components/Skills/Skills';
 import Softskills from './components/Softskills/Softskills';
+import AboutMe from './components/AboutMe/AboutMe';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
@@ -21,7 +22,7 @@ const App = () => {
 
   return (
     <div id="top" className={`${themeName} app`}>
-      {isHomePage ? <Header /> : <HomeHeader />} {/* Conditionally render headers */}
+      {isHomePage ? <Header /> : <HomeHeader />}
       <main>
         <Routes>
           <Route
@@ -32,6 +33,8 @@ const App = () => {
                 <Projects />
                 <Skills />
                 <Softskills />
+                <div className="divider" />
+                <AboutMe />
                 <Contact />
               </>
             }
@@ -46,10 +49,4 @@ const App = () => {
   );
 };
 
-const AppWrapper = () => (
-  <Router>
-    <App />
-  </Router>
-);
-
-export default AppWrapper;
+export default App;

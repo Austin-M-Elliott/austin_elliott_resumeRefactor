@@ -11,37 +11,53 @@ const about = {
   resume: 'https://example.com',
   social: {
     linkedin: 'https://www.linkedin.com/in/austin-elliott/',
+    github: 'https://github.com/Austin-M-Elliott'
   },
 }
 
 const projects = {}
 
+const skills = [
+  { name: 'Python'},
+  { name: 'PowerBI'},
+  { name: 'SQL'},
+  { name: 'PowerApps'},
+  { name: 'Excel'},
+  { name: 'VBA'},
+  { name: 'ArcGIS'},
+  { name: 'QGIS'}
+];
+
 const softskills = [
   { name: 'Communication' },
-  { name: 'Teamwork' },
+  { name: 'Innovation' },
+  { name: 'Leadership' },
   { name: 'Problem-Solving' },
   { name: 'Adaptability' },
   { name: 'Critical Thinking' },
-  { name: 'Work Ethic' },
-  { name: 'Time Management' },
   { name: 'Interpersonal Skills' },
-  { name: 'Leadership' },
-  { name: 'Attention to Detail' },
+  { name: 'Business Strategy' },
 ];
 
-const skills = [
-  { name: 'Python', subSkills: ['matplotlib', 'plotly', 'pandas', 'scipy'] },
-  { name: 'PowerBI', subSkills: ['Power Query', 'DAX', 'Data Modeling'] },
-  { name: 'SQL', subSkills: ['Test', 'Test', 'Test'] },
-  { name: 'PowerApps', subSkills: ['Form Building', 'PowerAutomate', 'Sharepoint Integration'] },
-  { name: 'Excel', subSkills: ['Pivot Tables', 'Power Query', 'Automation'] },
-  { name: 'VBA', subSkills: ['Automation', 'UserForms'] },
-  { name: 'ArcGIS', subSkills: ['arcPy','Pro','Arcade'] },
-  { name: 'QGIS', subSkills: ['PyQGIS', 'Test3', 'Test3'] }
-];
+const aboutme = {
+  description: 'I am passionate about using data to solve complex environmental challenges. I have a background in environmental science and have developed strong skills in data analysis and visualization. In my spare time, I enjoy fly fishing, hiking, and playing Dungeons and Dragons.',
+  picture: '/images/New Profile Pic.jpg',
+  hobbies: [
+    { name: 'Fly Fishing' },
+    { name: 'Travel' },
+    { name: 'Hiking/Backpacking' },
+    { name: 'Foraging' },
+    { name: 'Dungeons and Dragons' },
+    { name: 'Fantasy Football' },
+    { name: 'Photography' },
+    { name: 'Data Visualization' },
+    { name: 'Programming' },
+  ],
+};
+
 
 const contact = {
   email: 'austin.michael.elliott@gmail.com',
 }
 
-export { header, about, projects, skills, softskills, contact }
+export { header, about, projects, skills, softskills, aboutme, contact }
