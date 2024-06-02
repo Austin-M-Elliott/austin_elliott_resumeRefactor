@@ -9,7 +9,7 @@ const projects = [
     description: 'Card Game Simulation.',
     internalLink: '/acesUp',
     stack: ['Python', 'React', 'FastAPI', 'Chart.js'],
-    sourceCode: '',
+    sourceCode: 'https://github.com/Austin-M-Elliott/timezone-frontend',
     livePreview: '',
   },
   

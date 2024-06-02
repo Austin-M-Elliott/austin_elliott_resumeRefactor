@@ -5,7 +5,7 @@ const header = {
 
 const about = {
   name: 'Austin Elliott',
-  role: 'Focused on bringing cutting edge data-based solutions to the environmental business.',
+  role: 'Focused on integrating cutting edge data-based solutions in the environmental business.',
   description:
     '',
   resume: 'https://example.com',
@@ -30,11 +30,14 @@ const softskills = [
 ];
 
 const skills = [
-  { name: 'Python', subSkills: ['matplotlib', 'plotly', 'scipy', 'pandas'] },
+  { name: 'Python', subSkills: ['matplotlib', 'plotly', 'pandas', 'scipy'] },
   { name: 'PowerBI', subSkills: ['Power Query', 'DAX', 'Data Modeling'] },
-  { name: 'Test', subSkills: ['Test', 'Test', 'Test'] },
-  { name: 'Test2', subSkills: ['Test2', 'Test2', 'Test2'] },
-  { name: 'Test3', subSkills: ['Test3', 'Test3', 'Test3'] },
+  { name: 'SQL', subSkills: ['Test', 'Test', 'Test'] },
+  { name: 'PowerApps', subSkills: ['Form Building', 'PowerAutomate', 'Sharepoint Integration'] },
+  { name: 'Excel', subSkills: ['Pivot Tables', 'Power Query', 'Automation'] },
+  { name: 'VBA', subSkills: ['Automation', 'UserForms'] },
+  { name: 'ArcGIS', subSkills: ['arcPy','Pro','Arcade'] },
+  { name: 'QGIS', subSkills: ['PyQGIS', 'Test3', 'Test3'] }
 ];
 
 const contact = {
