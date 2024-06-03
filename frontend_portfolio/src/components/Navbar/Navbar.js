@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import Brightness2Icon from '@material-ui/icons/Brightness2'
 import WbSunnyRoundedIcon from '@material-ui/icons/WbSunnyRounded'
 import MenuIcon from '@material-ui/icons/Menu'
@@ -12,6 +12,12 @@ const Navbar = () => {
   const [showNavList, setShowNavList] = useState(false)
 
   const toggleNavList = () => setShowNavList(!showNavList)
+
+  useEffect(() => {
+    console.log('Projects:', projects)
+    console.log('Skills:', skills)
+    console.log('Contact:', contact)
+  }, [])
 
   return (
     <nav className='center nav'>

@@ -13,4 +13,12 @@
   padding: 1em;
   text-align: center;
   box-shadow: var(--shadow);
+  color: var(--clr-fg-alt);
+  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+  background-color: var(--clr-bg);
+}
+
+.softskills__list-item:hover {
+  color: var(--clr-bg);
+  background-color: var(--clr-fg-alt);
 }

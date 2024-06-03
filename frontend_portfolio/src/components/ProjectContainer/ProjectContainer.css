@@ -9,6 +9,7 @@
   transition: transform 0.2s linear;
   overflow: hidden; /* Ensure the pseudo-element is contained */
   background-color: transparent; /* Ensure the background is transparent initially */
+  cursor: pointer; /* Add this line to change the cursor to pointer on hover */
 }
 
 .project::before {

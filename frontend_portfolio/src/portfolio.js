@@ -15,7 +15,17 @@ const about = {
   },
 }
 
-const projects = {}
+const projects = [
+  {
+    name: 'Aces Up',
+    description: 'Card Game Simulation.',
+    internalLink: '',
+    stack: ['Python', 'React', 'FastAPI', 'Chart.js'],
+    sourceCode: 'https://github.com/Austin-M-Elliott/timezone-frontend',
+    livePreview: '',
+  },
+];
+
 
 const skills = [
   { name: 'Python'},

@@ -40,7 +40,6 @@ const App = () => {
             }
           />
           <Route path="/acesUp" element={<AcesUp />} />
-          <Route path="/projects" element={<Projects />} />
         </Routes>
       </main>
       <ScrollToTop />
