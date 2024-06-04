@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { Bar } from 'react-chartjs-2';
 import { ClipLoader } from 'react-spinners';
 import 'chart.js/auto';
+import { ThemeContext } from '../../contexts/theme';
 import './acesUp.css';
 
 const AcesUp = () => {
+  const [{ themeName }] = useContext(ThemeContext);
   const [chartData, setChartData] = useState({
     labels: [],
     datasets: [
@@ -65,6 +67,73 @@ const AcesUp = () => {
     startSimulation(1000);
   }, []);
 
+  const chartOptions = {
+    scales: {
+      x: {
+        title: {
+          font: {
+            size:18
+          },
+          display: true,
+          text: 'Number of Cards Remaining on the Board',
+          color: themeName === 'dark' ? '#FFFFFF' : '#000000',
+        },
+        grid: {
+          lineWidth: 1,
+          color: themeName === 'dark' ? '#FFFFFF' : '#000000',
+        },
+        ticks: {
+          color: themeName === 'dark' ? '#FFFFFF' : '#000000',
+        },
+      },
+      y: {
+        title: {
+          font: {
+            size:18
+          },
+          display: true,
+          text: 'Probability (%)',
+          color: themeName === 'dark' ? '#FFFFFF' : '#000000',
+        },
+        ticks: {
+          callback(value) {
+            return `${value}%`;
+          },
+          color: themeName === 'dark' ? '#FFFFFF' : '#000000',
+        },
+        grid: {
+          lineWidth: 1,
+          color: themeName === 'dark' ? '#FFFFFF' : '#000000',
+        },
+      },
+    },
+    plugins: {
+      tooltip: {
+        displayColors: false,
+        callbacks: {
+          title(context) {
+            return `${context[0].label} Cards Remaining`;
+          },
+          label(context) {
+            const value = context.raw || 0;
+            return `Probability: ${value.toFixed(2)}%`;
+          },
+          labelColor() {
+            return {
+              borderColor: 'transparent',
+              backgroundColor: 'transparent',
+            };
+          },
+          titleColor() {
+            return '#FFFFFF';},
+          labelTextColor() {
+            return '#FFFFFF';
+          },
+        },
+      },
+    },
+  };
+
   return (
     <div className="simulation-container">
       <h2>Aces Up Simulation</h2>
@@ -87,61 +156,7 @@ const AcesUp = () => {
             <ClipLoader color="#36d7b7" loading={loading} size={150} />
           </div>
         ) : (
-          <Bar
-            data={chartData}
-            options={{
-              scales: {
-                x: {
-                  title: {
-                    display: true,
-                    text: 'Number of Cards Remaining on the Board',
-                  },
-                  grid: {
-                    lineWidth: 1,
-                    color: (0,0,0,.9),
-                  }
-                },
-                y: {
-                  title: {
-                    display: true,
-                    text: 'Probability (%)',
-                  },
-                  ticks: {
-                    callback(value) {
-                      return `${value}%`;
-                    },
-                  },
-                  grid: {
-                    lineWidth: 1,
-                    color: (0,0,0,.9),
-                  }
-                },
-              },
-              plugins: {
-                tooltip: {
-                  displayColors: false,
-                  callbacks: {
-                    title(context) {
-                      return `${context[0].label} Cards Remaining`;
-                    },
-                    label(context) {
-                      const value = context.raw || 0;
-                      return `Probability: ${value.toFixed(2)}%`;
-                    },
-                    labelColor() {
-                      return {
-                        borderColor: 'transparent',
-                        backgroundColor: 'transparent',
-                      };
-                    },
-                    labelTextColor() {
-                      return '#000';
-                    },
-                  },
-                },
-              },
-            }}
-          />
+          <Bar data={chartData} options={chartOptions} />
         )}
       </div>
       <div>

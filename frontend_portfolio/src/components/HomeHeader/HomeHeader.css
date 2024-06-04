@@ -1,14 +1,15 @@
-.homeheader {
-    height: 8em;
-    max-width: 1100px;
-    width: 95%;
-    margin: 0 auto;
-    justify-content: space-between;
+.home-header {
+  height: 8em;
+  max-width: 1100px;
+  width: 95%;
+  margin: 0 auto;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .home-header {
+    height: 6em;
   }
-  
-  @media (max-width: 600px) {
-    .homeheader {
-      height: 6em;
-    }
-  }
-  
+}

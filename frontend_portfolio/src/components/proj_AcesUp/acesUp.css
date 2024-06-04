@@ -26,6 +26,10 @@
   background-color: var(--hover-background-color);
 }
 
+.simulation-container h2 {
+  margin-bottom: 20px;
+}
+
 .chart-container {
   margin-top: 20px;
 }
@@ -60,4 +64,8 @@ blockquote:before {
 blockquote p {
   display: block; /* Ensure paragraphs are displayed as block elements */
   margin-top: 1em; /* Add margin to separate paragraphs */
+}
+
+p {
+  text-align: left;
 }
