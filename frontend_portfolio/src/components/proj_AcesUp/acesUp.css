@@ -1,12 +1,12 @@
 .simulation-container {
-  text-align: center; /* Center all content within the container */
+  text-align: center;
   padding: 2em;
 }
 
 .simulation-buttons {
   display: flex;
-  flex-wrap: wrap; /* Allow buttons to wrap to the next line */
-  justify-content: center; /* Center the buttons horizontally */
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
   margin-bottom: 20px;
 }
@@ -16,14 +16,16 @@
   font-size: 1rem;
   cursor: pointer;
   background-color: var(--background-color);
+  box-shadow: var(--shadow);
   color: var(--text-color);
   border: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  border-radius: 0px;
+  transition: background-color 0.3s ease;
 }
 
 .simulation-button:hover {
-  background-color: var(--hover-background-color);
+  color: var(--clr-bg);
+  background-color: var(--clr-fg-alt);
 }
 
 .simulation-container h2 {
@@ -35,35 +37,26 @@
 }
 
 .chart-container h3 {
-  text-align: center; /* Center the "Results" heading */
+  text-align: center;
 }
 
 .loading-spinner {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 400px; /* Ensure it matches the chart height */
+  height: 400px;
 }
 
 blockquote {
   border-left: 10px solid #ccc;
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
+  margin: 1.5em;
+  padding: 10px;
   quotes: "\201C""\201D""\2018""\2019";
 }
 
-blockquote:before {
-  color: #ccc;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
-}
-
 blockquote p {
-  display: block; /* Ensure paragraphs are displayed as block elements */
-  margin-top: 1em; /* Add margin to separate paragraphs */
+  display: block;
+  margin-top: 0.8em;
 }
 
 p {

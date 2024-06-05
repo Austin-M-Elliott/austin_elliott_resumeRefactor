@@ -14,17 +14,20 @@ const AcesUp = () => {
       {
         label: 'Probability',
         data: [],
-        backgroundColor: 'rgba(75, 192, 192, 0.9)',
+        backgroundColor: themeName === 'dark' ? 'rgba(255, 99, 132, 0.9)' : 'rgba(75, 192, 192, 0.9)',
       },
     ],
   });
   const [loading, setLoading] = useState(false);
 
   const simulationCounts = [10, 50, 100, 500, 1000, 10000, 50000];
+  const [currentSimulations, setCurrentSimulations] = useState(1000);
+
 
   const startSimulation = async (iterations) => {
     console.log('Starting simulation...');
     setLoading(true);
+    setCurrentSimulations(iterations);
     try {
       const response = await axios.post('http://127.0.0.1:8000/simulate/', {
         num_simulations: iterations,
@@ -52,7 +55,7 @@ const AcesUp = () => {
           {
             label: 'Probability',
             data: values,
-            backgroundColor: 'rgba(75, 192, 192, 0.9)',
+            backgroundColor: themeName === 'dark' ? 'rgba(75, 192, 192, 0.9)' : 'rgba(75, 192, 192, 0.9)',
           },
         ],
       });
@@ -108,6 +111,11 @@ const AcesUp = () => {
       },
     },
     plugins: {
+      legend: {
+        labels: {
+          color: themeName === 'dark' ? '#FFFFFF' : '#000000',
+        },
+      },
       tooltip: {
         displayColors: false,
         callbacks: {
@@ -150,7 +158,7 @@ const AcesUp = () => {
         ))}
       </div>
       <div className="chart-container">
-        <h3>Results</h3>
+      <h3>Results - {currentSimulations} games played</h3>
         {loading ? (
           <div className="loading-spinner">
             <ClipLoader color="#36d7b7" loading={loading} size={150} />
@@ -160,9 +168,14 @@ const AcesUp = () => {
         )}
       </div>
       <div>
+        <br/>
         <p>
-          In an attempt to distract myself from watching, reading, or otherwise looking at anything related to Michigan&apos;s 2024 playoff football game against Alabama, I spent the day trying to answer a question my math-wiz Uncle had. My family loves card games and a recent solo-time-waster everyone at Christmas has been playing is Aces Up. I&apos;ll let Wikipedia explain it:
+          In an attempt to distract myself from watching, reading, or otherwise looking at anything related to Michigan&apos;s 2024 playoff football game against Alabama, I spent the day trying to answer a question my math-wiz Uncle had. My family loves card games and a recent solo-time-waster everyone at Christmas has been playing is Aces Up. 
         </p>
+        <br/>
+        <p>To simplify the win condition: you want only four cards to remain. Similar to solitaire, but the cards are removed from the board when they are lower than an existing same-suit top card.</p>
+        <br/>
+        <p>Wikipedia&apos;s explanation of Aces Up:</p>
         <blockquote>
           <p>Gameplay for Aces Up works as follows:</p>
           <p>1. Deal four cards in a row face up.</p>
@@ -173,7 +186,9 @@ const AcesUp = () => {
           <p>6. Repeat Step 2, using only the visible, or top, cards on each of the four piles.</p>
           <p>7. When the last four cards have been dealt out and any moves made, the game is over. The fewer cards left in the tableau, the better. To win is to have only the four aces left.</p>
           <p>When the game ends, the number of discarded cards is your score. The maximum score (and thus the score necessary to win) is 48, which means all cards have been discarded except for the four aces, thus the name of the game.</p>
+          <p>Lastly a variation: Allows only the aces to be moved onto an empty pile. This makes game play much more restrictive and consequently the game can only be completed roughly once in every 270 games. </p>
         </blockquote>
+        <p>So what did we learn from this exercise? Whoever wrote the Wikipedia already did the math. The likelihood of winning is around 1 in every 270 games. And Michigan was really good at football in 2023/2024.</p>
       </div>
     </div>
   );

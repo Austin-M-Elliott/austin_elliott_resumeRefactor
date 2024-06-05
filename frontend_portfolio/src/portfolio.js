@@ -8,7 +8,7 @@ const about = {
   role: 'Focused on integrating cutting edge data-based solutions in the environmental business.',
   description:
     '',
-  resume: 'https://example.com',
+  resume: '/Austin M Elliott Resume Feb 2024.pdf',
   social: {
     linkedin: 'https://www.linkedin.com/in/austin-elliott/',
     github: 'https://github.com/Austin-M-Elliott'
@@ -50,7 +50,7 @@ const softskills = [
 ];
 
 const aboutme = {
-  description: 'I am passionate about using data to solve complex environmental challenges. I have a background in environmental science and have developed strong skills in data analysis and visualization. In my spare time, I enjoy fly fishing, hiking, and playing Dungeons and Dragons.',
+  description: 'Passionate about expanding the use of data to solve complex environmental challenges.',
   picture: '/images/New Profile Pic.jpg',
   hobbies: [
     { name: 'Fly Fishing' },
@@ -60,6 +60,7 @@ const aboutme = {
     { name: 'Dungeons and Dragons' },
     { name: 'Fantasy Football' },
     { name: 'Photography' },
+    { name: 'Classic Cars' },
     { name: 'Data Visualization' },
     { name: 'Programming' },
   ],
