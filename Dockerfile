@@ -1,5 +1,5 @@
 # Use an official Node runtime as a parent image for building the frontend
-FROM node:14 as build
+FROM node:16 as build
 
 # Set the working directory for the frontend build
 WORKDIR /frontend_portfolio
