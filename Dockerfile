@@ -20,7 +20,7 @@ RUN yarn build
 FROM python:3.9-slim
 
 # Set the working directory for the backend
-WORKDIR /app
+WORKDIR /backend_portfolio
 
 # Copy the backend files
 COPY backend_portfolio ./backend_portfolio
