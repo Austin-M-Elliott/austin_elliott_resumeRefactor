@@ -5,8 +5,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Dict
 import os
-import random
-from collections import defaultdict
 from .aces_up_main import (
     create_deck, play_game_with_stacks_updated, 
     simulate_games_with_stacks_updated
@@ -23,18 +21,28 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Serve static files (React build)
-app.mount("/static", StaticFiles(directory="../../frontend_portfolio/build/static"), name="static")
+# Get the absolute path of the current directory
+current_dir = os.path.dirname(os.path.abspath(__file__))
+static_dir = os.path.join(current_dir, '../../frontend_portfolio/build/static')
 
+# Serve static files (React build)
+if os.path.exists(static_dir):
+    app.mount("/static", StaticFiles(directory=static_dir), name="static")
+else:
+    raise RuntimeError(f"Static directory '{static_dir}' does not exist")
+
+# Root route serving the React index.html
 @app.get("/")
 async def read_index():
-    return FileResponse('../../frontend_portfolio/build/index.html')
+    return FileResponse(os.path.join(current_dir, '../../frontend_portfolio/build/index.html'))
 
+# Catch-all route to serve other static files or fallback to index.html
 @app.get("/{full_path:path}")
 async def read_full_path(full_path: str):
-    if full_path and os.path.exists(f'../../frontend_portfolio/build/{full_path}'):
-        return FileResponse(f'../../frontend_portfolio/build/{full_path}')
-    return FileResponse('../../frontend_portfolio/build/index.html')
+    file_path = os.path.join(current_dir, f'../../frontend_portfolio/build/{full_path}')
+    if full_path and os.path.exists(file_path):
+        return FileResponse(file_path)
+    return FileResponse(os.path.join(current_dir, '../../frontend_portfolio/build/index.html'))
 
 # API model and endpoint
 class SimulationRequest(BaseModel):
