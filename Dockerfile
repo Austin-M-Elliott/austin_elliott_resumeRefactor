@@ -35,4 +35,4 @@ RUN pip install --no-cache-dir -r backend_portfolio/requirements.txt
 EXPOSE 8000
 
 # Run the uvicorn server for the FastAPI app
-CMD ["uvicorn", "backend_portfolio.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "backend_portfolio.app.main:app", "--host", "0.0.0.0", "--port", "8000"]
