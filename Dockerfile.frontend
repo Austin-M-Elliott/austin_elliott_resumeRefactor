@@ -24,5 +24,4 @@ FROM nginx:alpine
 COPY --from=build /frontend_portfolio/build /usr/share/nginx/html
 
 EXPOSE 80
-EXPOSE 22
 CMD ["nginx", "-g", "daemon off;"]
