@@ -1,17 +1,19 @@
 # Dockerfile.backend
 
-# Use an official Python runtime as a parent image
+# Use an official Python runtime as a parent image for the backend
 FROM python:3.9-slim
 
-WORKDIR /app/backend
+# Set the working directory for the backend
+WORKDIR /backend_portfolio
 
-# Copy the backend source files
-COPY backend/ ./
+# Copy the backend files
+COPY backend_portfolio ./backend_portfolio
 
 # Install backend dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r backend_portfolio/requirements.txt
 
+# Make port 8000 available to the world outside this container
 EXPOSE 8000
 
-# Run the FastAPI application with Uvicorn
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Run the uvicorn server for the FastAPI app
+CMD ["uvicorn", "backend_portfolio.app.main:app", "--host", "0.0.0.0", "--port", "8000"]
