@@ -136,30 +136,3 @@ def execute_move_ace(board, from_pile, to_pile):
     moved_ace = board[from_pile].pop()
     moved_ace = moved_ace._replace(ace_moved=True)
     board[to_pile].append(moved_ace)
-
-app = FastAPI()
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Your React app's URL
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-class SimulationRequest(BaseModel):
-    num_simulations: int
-
-@app.post("/simulate/")
-def simulate_games(request: SimulationRequest) -> Dict[int, float]:
-    try:
-        outcomes_board, _ = simulate_games_with_stacks_updated(request.num_simulations)
-        probabilities_board = {k: v / request.num_simulations for k, v in outcomes_board.items()}
-        sorted_probabilities = dict(sorted(probabilities_board.items()))
-        return sorted_probabilities
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
