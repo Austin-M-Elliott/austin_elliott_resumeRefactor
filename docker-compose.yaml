@@ -9,6 +9,8 @@ services:
       - "8000:8000"
     environment:
       - PYTHONUNBUFFERED=1
+    networks:
+      - webnet
 
   frontend:
     build:
@@ -18,3 +20,8 @@ services:
       - "80:80"
     depends_on:
       - backend
+    networks:
+      - webnet
+
+networks:
+  webnet:
