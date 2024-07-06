@@ -5,7 +5,7 @@ const header = {
 
 const about = {
   name: 'Austin Elliott',
-  role: 'Focused on integrating cutting edge data-based solutions in the environmental business.',
+  role: 'Focused on integrating cutting edge data-based solutions in the environmental industry.',
   description:
     '',
   resume: '/Austin M Elliott Resume Feb 2024.pdf',
@@ -18,12 +18,36 @@ const about = {
 const projects = [
   {
     name: 'Aces Up',
-    description: 'Card Game Simulation.',
+    description: 'card game win probability',
     internalLink: '',
     stack: ['Python', 'React', 'FastAPI', 'Chart.js'],
-    sourceCode: 'https://github.com/Austin-M-Elliott/timezone-frontend',
+    sourceCode: 'https://github.com/Austin-M-Elliott/AcesUp',
     livePreview: '',
   },
+  {
+    name: 'Classic Car Data Collection',
+    description: 'aggregating car sales data',
+    internalLink: '',
+    stack: ['Python', 'BeautifulSoup', 'eBay SDK'],
+    sourceCode: 'https://github.com/Austin-M-Elliott/classicCar_dataScrape',
+    livePreview: '',
+  },
+  {
+    name: 'D&D Loot Generation',
+    description: 'randomly generating loot for Dungeons and Dragons',
+    internalLink: '',
+    stack: ['Python'],
+    sourceCode: 'https://github.com/Austin-M-Elliott/DnD_LootGenerator',
+    livePreview: '',
+  },
+  {
+    name: 'Video Game Scripting',
+    description: 'automating the boring stuff',
+    internalLink: '',
+    stack: ['Python', 'OpenCV'],
+    sourceCode: 'https://github.com/Austin-M-Elliott/Videogame_Scripting',
+    livePreview: '',
+  }
 ];
 
 
@@ -50,7 +74,7 @@ const softskills = [
 ];
 
 const aboutme = {
-  description: 'Passionate about expanding the use of data to solve complex environmental challenges.',
+  description: 'So many hobbies, too little time.',
   picture: '/images/New Profile Pic.jpg',
   hobbies: [
     { name: 'Fly Fishing' },
@@ -59,10 +83,13 @@ const aboutme = {
     { name: 'Foraging' },
     { name: 'Dungeons and Dragons' },
     { name: 'Fantasy Football' },
+    { name: 'Personal Finance' },
     { name: 'Photography' },
     { name: 'Classic Cars' },
     { name: 'Data Visualization' },
     { name: 'Programming' },
+    { name: 'Cooking' },
+    { name: 'Beer Brewing' }
   ],
 };
 

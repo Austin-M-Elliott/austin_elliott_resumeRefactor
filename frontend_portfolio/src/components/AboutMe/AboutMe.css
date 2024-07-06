@@ -28,7 +28,10 @@
   }
   
   .about-me__description {
+    
+    text-align: center;
     margin-top: 1em;
+    font-size: 1.2rem;
   }
   
   .about-me__hobbies {
@@ -49,3 +52,22 @@
     transition: color 0.4s ease-in-out;
   }
   
+  @media (max-width: 600px) {
+    .about-me__content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .about-me__description {
+      order: 1;
+      font-size: 0.9rem;
+    }
+  
+    .about-me__image {
+      order: 2;
+    }
+  
+    .about-me__hobbies {
+      order: 3;
+    }
+  }

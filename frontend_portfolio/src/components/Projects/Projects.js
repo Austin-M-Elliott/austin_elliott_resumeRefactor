@@ -1,18 +1,7 @@
 import uniqid from 'uniqid';
 import ProjectContainer from '../ProjectContainer/ProjectContainer';
 import './Projects.css';
-
-const projects = [
-  {
-    id: uniqid(),
-    name: 'Aces Up',
-    description: 'Card Game Simulation.',
-    internalLink: '/acesUp',
-    stack: ['Python', 'React', 'FastAPI', 'Chart.js'],
-    sourceCode: 'https://github.com/Austin-M-Elliott/timezone-frontend',
-    livePreview: '',
-  },
-];
+import { projects } from '../../portfolio';
 
 const Projects = () => {
   if (!projects.length) return null;
@@ -22,7 +11,7 @@ const Projects = () => {
       <h2 className='section__title'>Projects</h2>
       <div className='projects__grid'>
         {projects.map((project) => (
-          <ProjectContainer key={project.id} project={project} />
+          <ProjectContainer key={uniqid()} project={project} />
         ))}
       </div>
     </section>

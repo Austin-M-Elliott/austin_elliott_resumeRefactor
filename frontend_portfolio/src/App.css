@@ -19,7 +19,7 @@
   --clr-bg-alt: #1e4572;
   --clr-fg: #ffffff;
   --clr-fg-alt: #ffffff;
-  --clr-primary: #b8d8db;
+  --clr-primary: #ffffff;
   --shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
@@ -92,8 +92,8 @@ main {
 }
 
 .btn--outline {
-  color: var(--clr-primary);
-  border: 2px solid var(--clr-primary);
+  color: var(--clr-fg-alt);
+  border: 2px solid var(--clr-fg-alt);
   position: relative;
   overflow: hidden;
   z-index: 1;

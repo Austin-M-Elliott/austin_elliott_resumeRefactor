@@ -20,5 +20,5 @@
 
 .skills__list-item:hover {
   color: var(--clr-bg);
-  background-color: var(--clr-fg-alt);
+  background-color: var(--clr-primary);
 }

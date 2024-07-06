@@ -8,6 +8,13 @@
   overflow: hidden;
   background-color: transparent;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 250px;
+  width: 350px;
 }
 
 .project::before {
@@ -43,6 +50,7 @@
   z-index: 1;
   position: relative;
   transition: color 0.4s ease-in-out;
+  text-align: center;
 }
 
 .project__stack {
