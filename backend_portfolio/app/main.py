@@ -25,7 +25,7 @@ print("Defining API model...")
 class SimulationRequest(BaseModel):
     num_simulations: int
 
-@app.post("/simulate/")
+@app.post("/api/simulate/")
 def simulate_games(request: SimulationRequest) -> Dict[int, float]:
     try:
         outcomes_board, _ = simulate_games_with_stacks_updated(request.num_simulations)

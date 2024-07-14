@@ -19,7 +19,7 @@ const projects = [
   {
     name: 'Aces Up',
     description: 'card game win probability',
-    internalLink: '',
+    internalLink: '/projects/acesup',
     stack: ['Python', 'React', 'FastAPI', 'Chart.js'],
     sourceCode: 'https://github.com/Austin-M-Elliott/AcesUp',
     livePreview: '',

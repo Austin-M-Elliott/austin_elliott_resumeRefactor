@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import { useContext } from 'react';
 import { ThemeContext } from './contexts/theme';
 import Header from './components/Header/Header';
@@ -39,7 +39,7 @@ const App = () => {
               </>
             }
           />
-          <Route path="/acesUp" element={<AcesUp />} />
+          <Route path="/projects/acesup" element={<AcesUp />} />
         </Routes>
       </main>
       <ScrollToTop />
@@ -48,4 +48,10 @@ const App = () => {
   );
 };
 
-export default App;
+const AppWithRouter = () => (
+  <Router>
+    <App />
+  </Router>
+);
+
+export default AppWithRouter;
