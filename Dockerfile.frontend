@@ -11,6 +11,8 @@ COPY frontend_portfolio/package.json frontend_portfolio/yarn.lock ./
 # Install dependencies
 RUN yarn install
 
+RUN npx browserslist@latest --update-db
+
 # Copy the rest of the frontend source files
 COPY frontend_portfolio/ ./
 
