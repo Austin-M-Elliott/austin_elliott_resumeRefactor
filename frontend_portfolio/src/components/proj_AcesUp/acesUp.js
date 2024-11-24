@@ -29,7 +29,7 @@ const AcesUp = () => {
     setLoading(true);
     setCurrentSimulations(iterations);
     try {
-      const response = await axios.post('/projects/acesup/api/simulate/', {
+      const response = await axios.post('/simulations/aces_up/', {
         num_simulations: iterations,
       });
 

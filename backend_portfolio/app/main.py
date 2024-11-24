@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -9,8 +10,15 @@ from .aces_up_main import simulate_games_with_stacks_updated
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
+# Use environment variable to set root_path in production
+root_path = os.getenv("FASTAPI_ROOT_PATH", "")
+
 print("Setting up FastAPI...")
-app = FastAPI()
+app = FastAPI(root_path=root_path)
+
+# Log all registered routes
+for route in app.routes:
+    logger.debug(f"Registered route: {route.path} - {route.methods}")
 
 # Setup CORS
 app.add_middleware(
@@ -25,7 +33,7 @@ print("Defining API model...")
 class SimulationRequest(BaseModel):
     num_simulations: int
 
-@app.post("/api/simulate/")
+@app.post("/api/simulations/aces_up/")
 def simulate_games(request: SimulationRequest) -> Dict[int, float]:
     try:
         outcomes_board, _ = simulate_games_with_stacks_updated(request.num_simulations)
