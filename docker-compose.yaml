@@ -19,13 +19,12 @@ services:
       context: ./frontend_portfolio
       dockerfile: Dockerfile.frontend
     ports:
-      - "8080:3000"  # Added port mapping
+      - "8080:3000"
     networks:
       - webnet
     volumes:
       - ./frontend_portfolio:/frontend_portfolio
       - /frontend_portfolio/node_modules
-    command: yarn start
 
 networks:
   webnet:
