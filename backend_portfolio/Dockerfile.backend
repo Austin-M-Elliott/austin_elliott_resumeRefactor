@@ -6,14 +6,14 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Install backend dependencies
-COPY backend_portfolio/requirements.txt .
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the backend files
-COPY backend_portfolio/app ./app
+COPY app ./app
 
 # Make port 8000 available to the world outside this container
 EXPOSE 8000
 
 # Run the uvicorn server for the FastAPI app
-CMD ["uvicorn", "backend_portfolio.app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
