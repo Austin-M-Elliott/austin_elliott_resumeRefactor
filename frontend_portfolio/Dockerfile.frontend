@@ -15,6 +15,9 @@ RUN npx browserslist@latest --update-db
 COPY . .
 RUN yarn build
 
+# Verify build directory
+RUN ls -la /frontend_portfolio/build
+
 # Stage 2: Serve the frontend using a simple Node.js server
 FROM node:16-slim
 

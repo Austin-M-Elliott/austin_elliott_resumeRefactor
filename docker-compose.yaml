@@ -22,9 +22,6 @@ services:
       - "8080:3000"
     networks:
       - webnet
-    volumes:
-      - ./frontend_portfolio:/frontend_portfolio
-      - /frontend_portfolio/node_modules
 
 networks:
   webnet:
