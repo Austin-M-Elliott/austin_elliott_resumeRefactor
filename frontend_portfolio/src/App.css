@@ -1,8 +1,13 @@
+html {
+  background-color: var(--clr-bg);
+}
+
 .app {
   font-family: 'Poppins', sans-serif;
   line-height: 1.5;
   color: var(--clr-fg);
   background-color: var(--clr-bg);
+  min-height: 100vh;
 }
 
 .light {

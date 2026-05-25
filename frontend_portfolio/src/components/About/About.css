@@ -32,7 +32,54 @@
 }
 
 .about .btn--outline {
+  margin-right: 0;
+}
+
+/* ── Resume dropdown ───────────────────────────────────── */
+
+.resume-dropdown {
+  position: relative;
+  display: inline-block;
   margin-right: 1em;
+}
+
+.resume-dropdown__menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  min-width: 100%;
+  background-color: var(--clr-bg-alt);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  z-index: 20;
+}
+
+.resume-dropdown:hover .resume-dropdown__menu,
+.resume-dropdown:focus-within .resume-dropdown__menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.resume-dropdown__item {
+  display: block;
+  padding: 0.6em 1.1em;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--clr-fg);
+  white-space: nowrap;
+  text-align: left;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.resume-dropdown__item:hover {
+  background-color: var(--clr-primary);
+  color: var(--clr-bg);
 }
 
 @media (max-width: 600px) {

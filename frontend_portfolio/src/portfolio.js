@@ -8,7 +8,11 @@ const about = {
   role: 'Focused on integrating cutting edge data-based solutions in the environmental industry.',
   description:
     '',
-  resume: '/Austin M Elliott Resume Feb 2024.pdf',
+  resumes: [
+    { label: 'Nerd Resume',    href: '/resume-nerdcred.pdf' },
+    { label: 'Travel Resume',  href: '/resume-travelcred.pdf' },
+    { label: 'Outdoor Resume', href: '/resume-outdoorcred.pdf' },
+  ],
   social: {
     linkedin: 'https://www.linkedin.com/in/austin-elliott/',
     github: 'https://github.com/Austin-M-Elliott'
@@ -17,11 +21,19 @@ const about = {
 
 const projects = [
   {
+    name: 'Fantasy Football',
+    description: 'arse wins over a decade of fantasy football',
+    internalLink: '/fantasy-football',
+    stack: ['React', 'Chart.js'],
+    sourceCode: '',
+    livePreview: '',
+  },
+  {
     name: 'Aces Up',
     description: 'card game win probability',
     internalLink: '/projects/acesup',
     stack: ['Python', 'React', 'FastAPI', 'Chart.js'],
-    sourceCode: 'https://github.com/Austin-M-Elliott/AcesUp',
+    sourceCode: '',
     livePreview: '',
   },
   {
@@ -47,7 +59,7 @@ const projects = [
     stack: ['Python', 'OpenCV'],
     sourceCode: 'https://github.com/Austin-M-Elliott/Videogame_Scripting',
     livePreview: '',
-  }
+  },
 ];
 
 

@@ -4,7 +4,7 @@ import { about } from '../../portfolio'
 import './About.css'
 
 const About = () => {
-  const { name, role, description, resume, social } = about
+  const { name, role, description, resumes, social } = about
 
   return (
     <div className='about center'>
@@ -18,12 +18,23 @@ const About = () => {
       <p className='about__desc'>{description && description}</p>
 
       <div className='about__contact center'>
-        {resume && (
-          <a href={resume}>
-            <span type='button' className='btn btn--outline'>
-              Resume
-            </span>
-          </a>
+        {resumes && resumes.length > 0 && (
+          <div className='resume-dropdown'>
+            <span className='btn btn--outline'>Resume</span>
+            <div className='resume-dropdown__menu'>
+              {resumes.map((r) => (
+                <a
+                  key={r.label}
+                  href={r.href}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='resume-dropdown__item'
+                >
+                  {r.label}
+                </a>
+              ))}
+            </div>
+          </div>
         )}
 
         {social && (

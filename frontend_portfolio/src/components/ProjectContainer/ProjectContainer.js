@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import uniqid from 'uniqid';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LaunchIcon from '@material-ui/icons/Launch';
 import './ProjectContainer.css';
@@ -11,6 +10,8 @@ const ProjectContainer = ({ project }) => {
   const handleClick = () => {
     if (project.internalLink) {
       navigate(project.internalLink);
+    } else if (project.sourceCode) {
+      window.open(project.sourceCode, '_blank', 'noopener,noreferrer');
     }
   };
 
@@ -52,7 +53,7 @@ const ProjectContainer = ({ project }) => {
             <GitHubIcon />
           </a>
         )}
-        {project.livePreview && (
+{project.livePreview && (
           <a
             href={project.livePreview}
             aria-label='live preview'
