@@ -9,9 +9,9 @@ const about = {
   description:
     '',
   resumes: [
-    { label: 'Nerd Resume',    href: '/resume-nerdcred.pdf' },
-    { label: 'Travel Resume',  href: '/resume-travelcred.pdf' },
-    { label: 'Outdoor Resume', href: '/resume-outdoorcred.pdf' },
+    { label: 'Nerd Resume',    href: '/Austin_Elliott_Nerd_Resume.pdf' },
+    { label: 'Travel Resume',  href: '/Austin_Elliott_Travel_Resume.pdf' },
+    { label: 'Outdoor Resume', href: '/Austin_Elliott_Outdoors_Resume.pdf' },
   ],
   social: {
     linkedin: 'https://www.linkedin.com/in/austin-elliott/',
